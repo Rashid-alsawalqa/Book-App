@@ -1,8 +1,153 @@
 
-
 body {
-  background-color: red;
+  background-image: url(https://www.droidviews.com/wp-content/uploads/2019/09/oneplus-7t-pro-wall-droidviews-04.jpg);
+  background-size: 100%;
+  }
+
+/* //////////////// */
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: rgba(147, 133, 173, 0.363);
+  height: 540px;
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+  box-shadow: 5px 10px 8px #000000;
+
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: rgba(116, 0, 194, 0.445);
+  position: relative;
+  border-radius: 15px;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: rgba(111, 80, 151, 0);
+  display: block;
+  position: absolute;
+  border-radius: 5px;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: rgba(148, 0, 123, 0.411);
+  color: #ffffff;
+  transition: 400ms;
+}
+
+.active {
+  background-color: rgba(147, 127, 189, 0.527);
+  color: white;
+  border-radius: 10px;
+}
+
+
+/* ////////////////// */
+#input{
+width: 385px;
+height:10px;
+padding: 25px;
+margin: 15px
+
+}
+
+input{
+  background-color:rgba(255, 255, 255, 0.424);
+  border-radius: 25px;
+}
+#p{
+  text-align: center;
+  margin-top: -20px;
+  font-size: 23px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+
+#button{
+text-align: center;
+transition: 900ms;
+border-radius: 25px;
+width: 370px;
+height:25px;
+padding: 25px;
+margin-left: 60px;
+margin-top: 20px;
+cursor: pointer;
+box-shadow: 5px 10px 8px #000000;
+
+}
+
+#button:hover{
+  background-color: rgba(0, 15, 221, 0.739);
+  transform: scale(1.1);
+  transition: 900ms;
+}
+
+
+
+#title{
+  font-family: 'Shadows Into Light', cursive;
+  float: left;
+  background-color: rgba(235, 184, 255, 0.657);
+    margin: 15px;
+    width: 185px;
+    height: 20px;
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 5px;
+    box-shadow: 5px 10px 8px #000000;
+    text-align: center;
+    transition: 900ms;
+
+}
+#author{
+  font-family: 'Shadows Into Light', cursive;
+  background-color: rgba(235, 184, 255, 0.657);
+  margin: 15px;
+  width: 185px;
+  height: 20px;
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 5px;
+  box-shadow: 5px 10px 8px #000000;
+  text-align: center;
+  transition: 900ms;
+ 
+}
+#title:hover, #author:hover{
+  transform: scale(1.1);
+  transition: 900ms;
+}
+
+ h4{
+   margin-top: 25px;
+   margin-bottom: 15px;
+   font-family: 'Merienda', cursive;
+  text-align: center;
+  font-size: 45px;
+}
+.span{
+  cursor: pointer;
+}
+#span{
+  cursor: pointer;
+}
+
 
 
  @media only screen and (max-width: 500px) {
