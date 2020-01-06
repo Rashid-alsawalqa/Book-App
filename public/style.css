@@ -6,7 +6,7 @@ body {
 
 /* //////////////// */
 .mobile-container {
-  max-width: 480px;
+  max-width: 100%;
   margin: auto;
   background-color: rgba(147, 133, 173, 0.363);
   height: 540px;
@@ -61,10 +61,10 @@ body {
 
 /* ////////////////// */
 #input{
-width: 385px;
+width: 85%;
 height:10px;
 padding: 25px;
-margin: 15px
+margin: 35px
 
 }
 
