@@ -1,19 +1,47 @@
+/* * {
+  box-sizing: border-box;
+} */
 
 body {
   background-image: url(https://www.droidviews.com/wp-content/uploads/2019/09/oneplus-7t-pro-wall-droidviews-04.jpg);
   background-size: 100%;
+  background-attachment: fixed;
   }
 
 /* //////////////// */
-.mobile-container {
-  max-width: 480px;
-  margin: auto;
+
+.show{
+  max-width: 100%;
+  margin-top: 50px;
+  margin: 20px;
   background-color: rgba(147, 133, 173, 0.363);
-  height: 540px;
+  height: auto;
   color: rgb(0, 0, 0);
   border-radius: 15px;
   box-shadow: 5px 10px 8px #000000;
+  transition: 900ms;
+}
+#showImg{
+margin: 40px 0px 0px 40px;
+}
+#show{
+  text-align: center;
+  transition: 900ms;
+}
 
+.show:hover{
+  transform: scale(1.03);
+  transition: 900ms;
+}
+
+.mobile-container {
+  max-width: 100%;
+  margin: auto;
+  background-color: rgba(147, 133, 173, 0.363);
+  height: auto;
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+  box-shadow: 5px 10px 8px #000000;
 }
 
 .topnav {
@@ -61,7 +89,7 @@ body {
 
 /* ////////////////// */
 #input{
-width: 385px;
+width: 79%;
 height:10px;
 padding: 25px;
 margin: 15px
@@ -91,7 +119,7 @@ margin-left: 60px;
 margin-top: 20px;
 cursor: pointer;
 box-shadow: 5px 10px 8px #000000;
-
+margin-bottom: 120px;
 }
 
 #button:hover{
@@ -135,9 +163,9 @@ box-shadow: 5px 10px 8px #000000;
 }
 
  h4{
-   margin-top: 25px;
-   margin-bottom: 15px;
-   font-family: 'Merienda', cursive;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-family: 'Merienda', cursive;
   text-align: center;
   font-size: 45px;
 }
@@ -147,13 +175,51 @@ box-shadow: 5px 10px 8px #000000;
 #span{
   cursor: pointer;
 }
+#fiv{
+  background-color: rgba(255, 255, 255, 0.397);
+  margin: 25px;
+  width: 290px;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.698);
+  border-radius: 5px;
+  box-shadow: 5px 10px 8px #000000;
+  text-align: center;
+  transition: 900ms;
+  cursor: pointer;
+}
+#fiv:hover{
+  transform: scale(1.1);
+  transition: 900ms;
+}
 
+#all{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1020px;
+    cursor: pointer;
+}
 
+.detail{
+  width: 250px;
+  height: 20px;
+}
+.textarea{
+  width: 390px;
+  height: 90px;
+  margin: 10px;
+}
+
+.submit{
+  height: 35px;
+}
 
  @media only screen and (max-width: 500px) {
   body {
   background-image: url(https://www.droidviews.com/wp-content/uploads/2019/09/oneplus-7t-pro-wall-droidviews-04.jpg);
   background-size: 100%;
+  background-attachment: fixed;
   }
 
 /* //////////////// */
@@ -161,7 +227,7 @@ box-shadow: 5px 10px 8px #000000;
   max-width: 480px;
   margin: auto;
   background-color: rgba(147, 133, 173, 0.363);
-  height: 540px;
+  height: auto;
   color: rgb(0, 0, 0);
   border-radius: 15px;
   box-shadow: 5px 10px 8px #000000;
@@ -243,7 +309,7 @@ margin-left: 60px;
 margin-top: 20px;
 cursor: pointer;
 box-shadow: 5px 10px 8px #000000;
-
+margin-bottom: 50px;
 }
 
 #button:hover{
@@ -305,6 +371,7 @@ box-shadow: 5px 10px 8px #000000;
   body {
   background-image: url(https://www.droidviews.com/wp-content/uploads/2019/09/oneplus-7t-pro-wall-droidviews-04.jpg);
   background-size: 100%;
+  background-attachment: fixed;
   }
 
 /* //////////////// */
@@ -312,7 +379,7 @@ box-shadow: 5px 10px 8px #000000;
   max-width: 480px;
   margin: auto;
   background-color: rgba(147, 133, 173, 0.363);
-  height: 540px;
+  height: auto;
   color: rgb(0, 0, 0);
   border-radius: 15px;
   box-shadow: 5px 10px 8px #000000;
