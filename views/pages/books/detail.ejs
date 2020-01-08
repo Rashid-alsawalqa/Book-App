@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Book App</title> 
-       </head>
-        <body>
-         <header>
-            <a href="/new">Add a New Book</a>
-            <a href="/">Home</a>  
-               </header> 
-  <ul>
-            <img src="<%= book.image_url %>"> 
-            <h2><%=book.title %></h2>
-            <h3><%=book.author%></h3>
-            <p><%=book.description%></p>
-            <h4><%=book.isbn%></h4>
-            <p><%=book.bookshelf%></p>
-</ul>
-<footer>   
-</footer>
+
+<head>
+    <title>Book App</title>
+</head>
+<body>
+    <header>
+        <a href="/new">Add a New Book</a>
+        <a href="/">Home</a>
+    </header>
+    <ul>
+        <img src="<%= book.image_url %>">
+        <h2><%=book.title %></h2>
+        <h3><%=book.author%></h3>
+        <p><%=book.description%></p>
+        <h4><%=book.isbn%></h4>
+        <p><%=book.bookshelf%></p>
+    </ul>
+    <footer>
+    </footer>
 </body>
-</html> 
+
+</html>

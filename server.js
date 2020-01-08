@@ -1,30 +1,37 @@
 'use strict';
+
 require('dotenv').config();
+
 const express = require('express');
-const server = express();
+
+const app = express();
+
 const cors = require('cors');
 
-const superagent = require('superagent');
-const pg = require('pg');
+const pg = require('pg'); 
+
 const client = new pg.Client(process.env.DATABASE_URL);
+
+const superagent = require('superagent');
 
 const PORT = process.env.PORT;
 
-server.set('view engine', 'ejs')
-server.use(express.static('./public'));
-server.use(express.urlencoded({ extended: true }));
+
+app.set('view engine', 'ejs')
+app.use(express.static('./public'));
+app.use(express.urlencoded({ extended: true }));
 
 function handleError(error, response){
     response.render('pages/error', {error: error});
 }
 
 
-server.get('/', getAllBooks);
-server.get('/new', addBooks);
-server.post('/search', searcheData);
-server.post('/new', processAdd);
-server.get('/books/:book_id', getSpecificBook);
-server.post('/edit', edaitSelected);
+app.get('/', getAllBooks);
+app.get('/new', addBooks);
+app.post('/search', searcheData);
+app.post('/new', processAdd);
+app.post('/edit', edaitSelected);
+app.get('/books/:book_id', getSpecificBook);
 
 
 function edaitSelected(req,res){
@@ -53,12 +60,13 @@ function getAllBooks(req,res){
 function addBooks(req,res){
     res.render('pages/searches/new')
 }
+
+
 function processAdd(req,res){
     // console.log(req.body)
     let { image_url, title, author, description, isbn, bookshelf } = req.body
     let SQL = `INSERT INTO book (image_url, title, author, description, isbn, bookshelf) VALUES ($1, $2, $3, $4, $5, $6)`
     let values = [image_url, title, author, description, isbn, bookshelf]
-
     client.query(SQL, values)
     .then( () => {
         res.redirect('/');
@@ -75,21 +83,19 @@ function searcheData(req, res){
 }
 function Book(data) {
     this.title = data.volumeInfo.title? data.volumeInfo.title: "No Title Available";
-    this.image_url = (data.volumeInfo.imageLinks && data.volumeInfo.imageLinks.thumbnail) ? data.volumeInfo.imageLinks.thumbnail:"https://i.imgur.com/J5LVHEL.jpg";
     this.author = data.volumeInfo.authors? data.volumeInfo.authors: "No Authors";
+    this.image_url = (data.volumeInfo.imageLinks && data.volumeInfo.imageLinks.thumbnail) ? data.volumeInfo.imageLinks.thumbnail:"https://i.imgur.com/J5LVHEL.jpg";
     this.description = data.volumeInfo.description? data.volumeInfo.description:"No description available";
 }
 
-
-
-let message = "SORY YOU HAVE DO A MISTAKE"
-server.get('*', (req, res) => {
+let message = "ERROR"
+app.get('*', (req, res) => {
     res.status(404).render('./pages/error', { 'message': message })
 });
 
 client.connect()
 .then(()=>{
-    server.listen(PORT, () => console.log(PORT, 'YAAAAAAA'));
+    app.listen(PORT, () => console.log(PORT, `It's Work`));
 }).catch(err => handleError(err));
 
 
