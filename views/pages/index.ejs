@@ -7,47 +7,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Book Collection</title>
+  <link href="/styles/base.css" rel="stylesheet" type="text/css" />
+  <link href="/styles/layout.css" rel="stylesheet" type="text/css" />
+  <link href="/styles/modules.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <!-- Simulate a smartphone / tablet -->
-<div class="mobile-container">
-
-  <!-- Top Navigation Menu -->
-  <div class="topnav">
-    <a href="#home" class="active">Home</a>
-    <div id="myLinks">
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-    </div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
   <main>
-    <h4>Search for books</h4>
-    <!-- action visits the route and method is the route method -->
-    <form action='/searches' method='post'>
-      <input id="input" type="text" name="search" placeholder="Enter a title or author" required>
-      <fieldset id="title">
-        <label for="title">
-          <span class="span">Title</span>
-          <input id="span" type="radio" name="search" value="title" required>
-        </label>
-      </fieldset>
-
-      <fieldset id="author">
-        <label for="author">
-          <span class="span">Author</span>
-          <input  id="span" type="radio" name="search" value="author" required>
-        </label>
-      </fieldset>
-      <div>
-        <button id="button" type="submit"><p id="p">Search the Google Books API</p></button>
+    <!-- Simulate a smartphone / tablet -->
+    <div class="mobile-container">
+      <!-- Top Navigation Menu -->
+      <div class="topnav">
+        <a href="/" class="active">Home</a>
+        <div id="myLinks">
+          <a href="/new">Add a New Book</a>
+          <!-- <a href="/">Home</a> -->
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
-    </form>
+      <section id="all">
+        <%let conut=0%>
+        <% booksList.forEach(book => { %>
+        <div id="fiv">
+          <%++conut%>
+          <h2 class="title"><%= book.title%></h2>
+          <img src=<%= book.image_url%>>
+          <h3 class="author">Author :<%= book.author%></h3>
+          <form action="/books/<%= book.id%>" method="GET">
+            <button type="submit">View Details</button>
+          </form>
+        </div>
+        <% }) %>
+      </section>
+    </div>
   </main>
+  <footer>
+    <h2>BOOKS AMOUNT : <%=conut%></h2>
+  </footer>
   <script>
     function myFunction() {
       var x = document.getElementById("myLinks");
@@ -57,7 +56,7 @@
         x.style.display = "block";
       }
     }
-    </script>
+  </script>
 </body>
 
 </html>
