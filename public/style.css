@@ -10,6 +10,29 @@ body {
 
 /* //////////////// */
 
+.show{
+  max-width: 100%;
+  margin-top: 50px;
+  margin: 20px;
+  background-color: rgba(147, 133, 173, 0.363);
+  height: auto;
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+  box-shadow: 5px 10px 8px #000000;
+  transition: 900ms;
+}
+#showImg{
+margin: 40px 0px 0px 40px;
+}
+#show{
+  text-align: center;
+  transition: 900ms;
+}
+
+.show:hover{
+  transform: scale(1.03);
+  transition: 900ms;
+}
 
 .mobile-container {
   max-width: 100%;

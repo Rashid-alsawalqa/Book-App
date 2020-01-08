@@ -1,12 +1,11 @@
 'use strict';
-
-require('dotenv').config();
-
 const express = require('express');
 
 const app = express();
 
 const cors = require('cors');
+
+require('dotenv').config();
 
 const pg = require('pg'); 
 
@@ -35,7 +34,6 @@ app.get('/books/:book_id', getSpecificBook);
 
 
 function edaitSelected(req,res){
-    // console.log(req.body)
     res.render('pages/books/show', {book:req.body})
 }
 
@@ -45,7 +43,6 @@ function getSpecificBook(req,res){
     let values =[id];
     client.query(SQL,values)
     .then(data=>{
-        // console.log(data.rows)
         res.render('pages/books/detail',{book: data.rows[0]});
     }).catch(err=>handleError(err));
 }
@@ -63,7 +60,6 @@ function addBooks(req,res){
 
 
 function processAdd(req,res){
-    // console.log(req.body)
     let { image_url, title, author, description, isbn, bookshelf } = req.body
     let SQL = `INSERT INTO book (image_url, title, author, description, isbn, bookshelf) VALUES ($1, $2, $3, $4, $5, $6)`
     let values = [image_url, title, author, description, isbn, bookshelf]
