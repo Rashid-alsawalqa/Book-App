@@ -1,6 +1,6 @@
 # Book-App
 
-Number and name of feature:  Lab: 12 - Components and Forms
+Number and name of feature: Lab: 11 - EJS
 
 Estimate of time needed to complete: 4 hours 
 
